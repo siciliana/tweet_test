@@ -1,12 +1,7 @@
-<div class="container">
-  <h1>Enter Twitter username here:</h1>
+<h1>Who do you feel like stalking today?</h1>
+<form action="/use_ajax" method="POST">
+  <input type="text" name="username">
+  <input type="submit" value="Go!">
+</form>
 
-  <form >
-    <input type="text" name="username">
-    <input type='submit' value="Get tweets">
-  </form>
-
-  <div id="tweets">
-    
-  </div>
-</div>
+<a href="/tweets">tweet!</a>

@@ -1,0 +1,11 @@
+<script src="/js/application.js"></script>
+<h1 data-user="<%= @user.screen_name %>"><%= @user.screen_name %>'s last 10 tweets</h1>
+
+  <div class="latest_tweets">
+  <ul>
+	<% @tweets.order("twitter_tweet_id DESC").each do |tweet| %>
+		<li><%= tweet.text %></li>
+	<% end %>
+  </ul>
+
+</div>

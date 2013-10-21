@@ -1,10 +1,9 @@
 $(document).ready(function() {
-  $(document).on("submit", "form", function(event){
-    event.preventDefault();
-    var userName = $("input").val();
-    
-    $.get("/" + userName, function(response){
-      $("#tweets").html(response);
-    })
-  })
+
+  var username = $("h1").data("user");
+  console.log(username);
+  $.post("/add_new_tweets", {username: username}, function(response){
+    $(".latest_tweets").replaceWith(response);
+  });
+ 
 });

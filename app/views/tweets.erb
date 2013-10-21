@@ -1,7 +1,6 @@
-<ul>
-  <% @tweets.each do |tweet| %>
-  <li>
-    <%= tweet.text %>
-  </li>
-  <% end %>
-</ul>
+<h1>tweet!</h1>
+
+<form action="/submit_tweet" method="POST">
+  <input type="text" name="submitted_tweet" placeholder="tweet here!">
+  <input type="submit">
+</form>
