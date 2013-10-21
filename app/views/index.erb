@@ -1,14 +1,12 @@
 <div class="container">
-  <table>
-    <tr>
-      <th>Date</th>
-      <th>Tweet</th>
-    </tr>
-  <% @tweets_all_info.each do |tweet| %>
-    <tr>
-      <td><%= tweet.authored_date.strftime('%m/%d/%Y at %I:%M%p') %></td>
-      <td><%= tweet.text %></td>
-    </tr>
-  <% end %>
-  </table>
+  <h1>Enter Twitter username here:</h1>
+
+  <form >
+    <input type="text" name="username">
+    <input type='submit' value="Get tweets">
+  </form>
+
+  <div id="tweets">
+    
+  </div>
 </div>

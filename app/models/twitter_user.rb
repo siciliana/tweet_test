@@ -3,8 +3,8 @@ class TwitterUser < ActiveRecord::Base
 
 
   def fetch_tweets!
-    tweets = Twitter.user_timeline("#{self.username}")[0..9]
-    tweets.each do |tweet|
+    @tweets = Twitter.user_timeline(@user.screen_name)[0..9]
+    @tweets.each do |tweet|
       Tweet.where(:twitter_id => tweet.id).first_or_create(
         :text => tweet.text,
         :authored_date => tweet.created_at,
@@ -24,9 +24,11 @@ class TwitterUser < ActiveRecord::Base
   end
 
   def bieber_tweets
-  	bieber_tweets = Twitter.search("to:justinbieber marry me", :count => 3, :result_type => "recent").results.map do |status|
-  "#{status.from_user}: #{status.text}"
-end
+  	bieber_tweets = Twitter.search("to:justinbieber marry me", 
+  		:count => 3, 
+  		:result_type => "recent").results.map do |status|
+  		"#{status.from_user}: #{status.text}"
+		end
   end 
 
 

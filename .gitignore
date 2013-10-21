@@ -21,7 +21,7 @@ public/assets
 ignored/
 .irb-save-history
 chromedriver.log
-twitter.yaml
+config/twitter.yaml
 .tddium*
 bin/
 .env
