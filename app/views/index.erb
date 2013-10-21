@@ -1,23 +1,14 @@
 <div class="container">
-  <h1>Welcome to Sinatra!</h1>
-  <p>Hello, world!</p>
-
   <table>
     <tr>
-      <th>File Description</th>
-      <th>File Location</th>
+      <th>Date</th>
+      <th>Tweet</th>
     </tr>
+  <% @tweets_all_info.each do |tweet| %>
     <tr>
-      <td>This view file</td>
-      <td><code><%= __FILE__.gsub(Sinatra::Application.root, '') %></code></td>
+      <td><%= tweet.authored_date.strftime('%m/%d/%Y at %I:%M%p') %></td>
+      <td><%= tweet.text %></td>
     </tr>
-    <tr>
-      <td>The layout file</td>
-      <td><code><%= File.expand_path('../layout.erb', __FILE__).gsub(Sinatra::Application.root, '') %></code></td>
-    </tr>
-    <tr>
-      <td>The current controller</td>
-      <td><code><%= File.expand_path('../../controllers/index.rb', __FILE__).gsub(Sinatra::Application.root, '') %></code></td>
-    </tr>
+  <% end %>
   </table>
 </div>
